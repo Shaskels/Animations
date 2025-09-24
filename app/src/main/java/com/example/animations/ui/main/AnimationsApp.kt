@@ -25,7 +25,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.animations.ui.screen.AnimatedContent
-import com.example.animations.ui.screen.AnimatedVisibility
+import com.example.animations.ui.screen.AnimatedVisibilityScreen
 import kotlinx.coroutines.launch
 
 @Composable
@@ -82,7 +82,7 @@ fun AnimationsApp() {
                 modifier = Modifier.padding(innerPadding)
             ) {
                 composable(AnimationScreens.AnimatedVisibility.name) {
-                    AnimatedVisibility()
+                    AnimatedVisibilityScreen()
                 }
                 composable(AnimationScreens.AnimatedContent.name) {
                     AnimatedContent()
