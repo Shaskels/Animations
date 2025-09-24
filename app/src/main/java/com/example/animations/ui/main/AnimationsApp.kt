@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.animations.ui.screen.AnimatedContent
+import com.example.animations.ui.screen.AnimatedContentScreen
 import com.example.animations.ui.screen.AnimatedVisibilityScreen
 import kotlinx.coroutines.launch
 
@@ -48,11 +48,16 @@ fun AnimationsApp() {
                     Text(
                         "Animations",
                         modifier = Modifier.padding(16.dp),
-                        style = MaterialTheme.typography.titleLarge
+                        style = MaterialTheme.typography.bodyMedium
                     )
                     HorizontalDivider()
                     NavigationDrawerItem(
-                        label = { Text(AnimationScreens.AnimatedVisibility.title) },
+                        label = {
+                            Text(
+                                AnimationScreens.AnimatedVisibility.title,
+                                style = MaterialTheme.typography.titleMedium
+                            )
+                        },
                         selected = false,
                         onClick = {
                             scope.launch {
@@ -62,7 +67,12 @@ fun AnimationsApp() {
                         }
                     )
                     NavigationDrawerItem(
-                        label = { Text(AnimationScreens.AnimatedContent.title) },
+                        label = {
+                            Text(
+                                AnimationScreens.AnimatedContent.title,
+                                style = MaterialTheme.typography.titleMedium
+                            )
+                        },
                         selected = false,
                         onClick = {
                             scope.launch {
@@ -85,7 +95,7 @@ fun AnimationsApp() {
                     AnimatedVisibilityScreen()
                 }
                 composable(AnimationScreens.AnimatedContent.name) {
-                    AnimatedContent()
+                    AnimatedContentScreen()
                 }
             }
         }
